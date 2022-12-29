@@ -5,9 +5,10 @@
 class Player;
 
 
+template<typename DataType=std::uint32_t>
 class Resource {
     const unsigned offset;
-    std::int32_t data; // TODO: support other types
+    DataType data;
 
 public:
     const char *const name;
@@ -15,7 +16,7 @@ public:
     Resource(const char *name, unsigned offset);
 
     /* performs update! */
-    std::int32_t get(const Player *player);
+    DataType get(const Player *player);
 };
 
 

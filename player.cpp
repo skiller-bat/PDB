@@ -15,7 +15,8 @@ Player::Player(unsigned int id, const char *const name) :
 void Player::update() {
 
     for (auto &res : resources) {
-        std::int32_t data = res.get(this);
+        // what is auto here?
+        auto data = res.get(this);
         std::cout << res.name << ": " << data << std::endl;
     }
 }
