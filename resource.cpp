@@ -8,19 +8,22 @@
 
 
 // declaration of all Rescource<DataType> instantiations
-template class Resource<uint16_t>;
+//template class Resource<uint16_t>; // problem?!
 template class Resource<uint32_t>;
 
 
+// TODO: constructor which generates windows itself (probably Printable())
 template<typename DataType>
-Resource<DataType>::Resource(const char *const name, const unsigned offset) :
+Resource<DataType>::Resource(Window window, const char *const name, const unsigned offset) :
+        Printable(window),
         name(name), offset(offset), data(0)
     {}
 
 template<typename DataType>
-DataType Resource<DataType>::get(const Player *const player) {
+DataType Resource<DataType>::get() {
 
-    LPCVOID addr = (char *) Game::get_instance()->BASE_ADDRESS + offset + (player->ID - 1) * Player::delta;
+//    LPCVOID addr = (char *) Game::get_instance()->BASE_ADDRESS + offset + (player->ID - 1) * Player::delta;
+    LPCVOID addr = (char *) Game::get_instance()->BASE_ADDRESS + offset + (1 - 1) * Player::delta;
     SIZE_T bytes_to_read = sizeof(data);
 //    std::cout << sizeof(data) << std::endl;
     SIZE_T bytes_read;

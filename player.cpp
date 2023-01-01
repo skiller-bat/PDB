@@ -16,7 +16,9 @@ void Player::update() {
 
     for (auto &res : resources) {
         // what is auto here?
-        auto data = res.get(this);
-        std::cout << res.name << ": " << data << std::endl;
+//        auto data = res.get(this);
+//        auto data = res.get();
+//        std::cout << res.name << ": " << data << std::endl;
+        res.update();
     }
 }

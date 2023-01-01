@@ -1,22 +1,23 @@
 #ifndef PDB_RESOURCE_H
 #define PDB_RESOURCE_H
 
+#include "view/printable.h"
 
 class Player;
 
 
 template<typename DataType=std::uint32_t>
-class Resource {
+class Resource: public Printable<> {
     const unsigned offset;
     DataType data;
 
 public:
     const char *const name;
 
-    Resource(const char *name, unsigned offset);
+    Resource(Window window, const char *name, unsigned offset);
 
     /* performs update! */
-    DataType get(const Player *player);
+    DataType get() override;
 };
 
 
