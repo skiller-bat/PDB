@@ -10,6 +10,8 @@ public:
     const unsigned len;
 
     Window(unsigned row, unsigned col, unsigned len);
+
+    void clear() const;
 };
 
 

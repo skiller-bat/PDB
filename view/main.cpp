@@ -1,7 +1,5 @@
 #include <iostream>
 #include "printable.h"
-#include "../derivation.h"
-#include "window.h"
 #include "../player.h"
 #include <curses.h>
 
@@ -15,19 +13,20 @@ int main(int argc, char *argv[]) {
     atexit(quit);
     curs_set(0);
 
+    start_color();
+    init_pair(1, COLOR_GREEN, COLOR_BLACK);
+    init_pair(2, COLOR_RED, COLOR_BLACK);
+    init_pair(3, COLOR_WHITE, COLOR_BLACK);
 
-//    Window window = Window(0,1,2);
-//    Printable<> *p = new Derivation<>(window);
-//    auto data = p->get();
-//    std::cout << data << std::endl;
-//    p->update();
-
+    // make getch() non-blocking but waiting for 1 second
+    // http://www.manpagez.com/man/3/curs_inopts/
+    timeout(1000);
 
     Player *p = new Player(1, "MyName");
-    while (getch() != 'x') {
+    do {
         p->update();
         refresh();
-    }
+    } while (getch() != 'x');
 
     return EXIT_SUCCESS;
 }

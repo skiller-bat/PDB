@@ -8,16 +8,15 @@ class Player;
 
 template<typename DataType=std::uint32_t>
 class Resource: public Printable<> {
-    const unsigned offset;
+    const void *const address;
     DataType data;
 
 public:
-    const char *const name;
+    Resource(const char *name, const void *address);
+    Resource(Window window, const char *name, const void *address);
 
-    Resource(Window window, const char *name, unsigned offset);
-
-    /* performs update! */
     DataType get() override;
+    DataType update_and_get() override;
 };
 
 

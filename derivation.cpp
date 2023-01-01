@@ -5,7 +5,7 @@ template class Derivation<uint32_t>;
 
 
 template<typename DataType>
-Derivation<DataType>::Derivation(Window window) : Printable(window)
+Derivation<DataType>::Derivation(Window window) : Printable("", window)
     {}
 
 template<typename DataType>
