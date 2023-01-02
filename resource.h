@@ -7,7 +7,7 @@ class Player;
 
 
 template<typename DataType=std::uint32_t>
-class Resource: public Printable<> {
+class Resource: public Printable<DataType> {
     const void *const address;
     DataType data;
 

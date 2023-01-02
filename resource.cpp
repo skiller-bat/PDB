@@ -1,25 +1,26 @@
 #include <memoryapi.h>
+#include <array>
 
 #include "resource.h"
 #include "game.h"
 
 
 // declaration of all Rescource<DataType> instantiations
-//template class Resource<uint16_t>; // problem?!
+//template class Resource<uint16_t>;
 template class Resource<uint32_t>;
-
+template class Resource<std::array<char, 32>>;
 
 
 template<typename DataType>
 Resource<DataType>::Resource(const char *name, const void *address) :
-        Printable(name),
-        address(address), data(0)
+        Printable<DataType>(name),
+        address(address), data()
     {}
 
 template<typename DataType>
 Resource<DataType>::Resource(Window window, const char *const name, const void *address) :
-        Printable(name, window),
-        address(address), data(0)
+        Printable<DataType>(name, window),
+        address(address), data()
     {}
 
 template<typename DataType>

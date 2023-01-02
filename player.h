@@ -10,6 +10,7 @@
 class Player {
 
     std::vector<Resource<>> resources;
+    std::vector<Resource<std::array<char, 32>>> resources2;
 
 public:
     const unsigned ID;

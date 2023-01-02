@@ -20,6 +20,7 @@ public:
 
     void reprint();
 
+    static void new_row(unsigned row_delta);
     static void new_column(unsigned col_delta);
 
     virtual DataType get() = 0;
