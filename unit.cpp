@@ -3,7 +3,7 @@
 Unit::Unit(const char *name, unsigned int offset) : offset(offset), name(name)
     {}
 
-const std::array<Unit, 8> Unit::overview {
+const std::array<Unit, 9> Unit::overview {
         Unit("Gold", 0xD5FCF8),
         Unit("Troops", 0xD5FD28),
         Unit("Housing", 0xD5F860),
@@ -12,6 +12,7 @@ const std::array<Unit, 8> Unit::overview {
         Unit("Tax Level", 0xD61974), //
         Unit("Rations", 0xD61978), //
         Unit("Sentiment", 0xD5F84C),
+        Unit("Strength", 0xD628E0),
 };
 const std::array<Unit, 4> Unit::material {
         Unit("Wood", 0xD5FCC4),

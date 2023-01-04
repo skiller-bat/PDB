@@ -25,9 +25,9 @@ int main(int argc, char *argv[]) {
     init_pair(2, COLOR_RED, COLOR_BLACK);
     init_pair(3, COLOR_WHITE, COLOR_BLACK);
 
-    // make getch() non-blocking but waiting for 1 second
+    // make getch() non-blocking but waiting for 0.5 seconds
     // http://www.manpagez.com/man/3/curs_inopts/
-    timeout(1000);
+    timeout(500);
 
     Player *p = new Player(argv[1][0]-'0', "Player");
     do {

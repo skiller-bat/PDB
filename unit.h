@@ -13,7 +13,7 @@ public:
 
     Unit(const char *name, unsigned offset);
 
-    static const std::array<Unit, 8> overview;
+    static const std::array<Unit, 9> overview;
     static const std::array<Unit, 4> material;
     static const std::array<Unit, 8> food;
     static const std::array<Unit, 8> weapons;
